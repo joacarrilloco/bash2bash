@@ -1,1 +1,1 @@
-ls cat ls cat
+dash -c 'echo hi'
