@@ -11,6 +11,10 @@ public class Translator {
             // Crear el objeto correspondiente al analizador sintáctico que se alimenta a partir del buffer de tokens
             b2bParser parser = new b2bParser(tokens);
             ParseTree tree = parser.root(); // Iniciar el analisis sintáctico en la regla inicial: root
+            // Create a generic parse tree walker that can trigger callbacks
+            ParseTreeWalker walker = new ParseTreeWalker();
+            // Walk the tree created during the parse, trigger callbacks
+            walker.walk(new Listener(), tree);
             //System.out.println(tree.toStringTree(parser)); imprime el arbol al estilo LISP
         } catch (Exception e){
             System.err.println("Error (Test): " + e);

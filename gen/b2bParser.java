@@ -16,47 +16,53 @@ public class b2bParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, OR=6, AND=7, AMP=8, SEMIC=9, DOUBLE_SEMIC=10, 
-		SEMIAMP=11, DOUBLE_SEMIAMP=12, PIPE=13, PIPEAMP=14, L_BR=15, R_BR=16, 
-		L_SQUAREBR=17, R_SQUAREBR=18, L_CURLYBR=19, R_CURLYBR=20, LT=21, GT=22, 
-		Exclamation=23, DOUBLE_QUOTE=24, SINGLE_QUOTE=25, BACKSLASH=26, PR_if=27, 
-		PR_then=28, PR_elif=29, PR_else=30, PR_fi=31, PR_time=32, PR_for=33, PR_in=34, 
-		PR_until=35, PR_while=36, PR_do=37, PR_done=38, PR_case=39, PR_esac=40, 
-		PR_coproc=41, PR_select=42, PR_function=43, PR_Lsquarebracket=44, PR_Rsquarebracket=45, 
-		ID=46, FILENAME=47, COMMENT=48, WS=49;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, OR=13, AND=14, AMP=15, SEMIC=16, DOUBLE_SEMIC=17, 
+		SEMIAMP=18, DOUBLE_SEMIAMP=19, PIPE=20, PIPEAMP=21, L_BR=22, R_BR=23, 
+		L_SQUAREBR=24, R_SQUAREBR=25, L_CURLYBR=26, R_CURLYBR=27, LT=28, GT=29, 
+		Exclamation=30, DOUBLE_QUOTE=31, SINGLE_QUOTE=32, BACKSLASH=33, PR_if=34, 
+		PR_then=35, PR_elif=36, PR_else=37, PR_fi=38, PR_time=39, PR_for=40, PR_in=41, 
+		PR_until=42, PR_while=43, PR_do=44, PR_done=45, PR_case=46, PR_esac=47, 
+		PR_coproc=48, PR_select=49, PR_function=50, PR_Lsquarebracket=51, PR_Rsquarebracket=52, 
+		ID=53, FILENAME=54, SQ_WORD=55, DQ_WORD=56, COMMENT=57, COMMENT_MUL=58, 
+		WS=59;
 	public static final int
-		RULE_root = 0, RULE_command = 1, RULE_dash = 2, RULE_dashargs = 3, RULE_dashparams = 4, 
-		RULE_execution_control = 5, RULE_b_if = 6, RULE_b_while = 7, RULE_b_for = 8, 
-		RULE_b_until = 9;
+		RULE_root = 0, RULE_command = 1, RULE_comments = 2, RULE_comment_lines = 3, 
+		RULE_gramar_excecution = 4, RULE_dash = 5, RULE_dashargs = 6, RULE_echo = 7, 
+		RULE_short_option = 8, RULE_string = 9, RULE_long_option = 10, RULE_execution_control = 11, 
+		RULE_b_if = 12, RULE_b_while = 13, RULE_b_for = 14, RULE_b_until = 15;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"root", "command", "dash", "dashargs", "dashparams", "execution_control", 
-			"b_if", "b_while", "b_for", "b_until"
+			"root", "command", "comments", "comment_lines", "gramar_excecution", 
+			"dash", "dashargs", "echo", "short_option", "string", "long_option", 
+			"execution_control", "b_if", "b_while", "b_for", "b_until"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'dash'", "'-'", "'c'", "'a'", "'s'", "'||'", "'&&'", "'&'", "';'", 
-			"';;'", "';&'", "';;&'", "'|'", "'|&'", "'('", "')'", "'['", "']'", "'{'", 
-			"'}'", "'<'", "'>'", "'!'", "'\"'", "'''", "'\\'", "'if'", "'then'", 
-			"'elif'", "'else'", "'fi'", "'time'", "'for'", "'in'", "'until'", "'while'", 
-			"'do'", "'done'", "'case'", "'esac'", "'coproc'", "'select'", "'function'", 
-			"'[['", "']]'"
+			null, "'dash'", "'-'", "'c'", "'a'", "'s'", "'echo'", "'n'", "'e'", "'E'", 
+			"'--'", "'help'", "'version'", "'||'", "'&&'", "'&'", "';'", "';;'", 
+			"';&'", "';;&'", "'|'", "'|&'", "'('", "')'", "'['", "']'", "'{'", "'}'", 
+			"'<'", "'>'", "'!'", "'\"'", "'''", "'\\'", "'if'", "'then'", "'elif'", 
+			"'else'", "'fi'", "'time'", "'for'", "'in'", "'until'", "'while'", "'do'", 
+			"'done'", "'case'", "'esac'", "'coproc'", "'select'", "'function'", "'[['", 
+			"']]'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, "OR", "AND", "AMP", "SEMIC", "DOUBLE_SEMIC", 
-			"SEMIAMP", "DOUBLE_SEMIAMP", "PIPE", "PIPEAMP", "L_BR", "R_BR", "L_SQUAREBR", 
-			"R_SQUAREBR", "L_CURLYBR", "R_CURLYBR", "LT", "GT", "Exclamation", "DOUBLE_QUOTE", 
-			"SINGLE_QUOTE", "BACKSLASH", "PR_if", "PR_then", "PR_elif", "PR_else", 
-			"PR_fi", "PR_time", "PR_for", "PR_in", "PR_until", "PR_while", "PR_do", 
-			"PR_done", "PR_case", "PR_esac", "PR_coproc", "PR_select", "PR_function", 
-			"PR_Lsquarebracket", "PR_Rsquarebracket", "ID", "FILENAME", "COMMENT", 
-			"WS"
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, "OR", "AND", "AMP", "SEMIC", "DOUBLE_SEMIC", "SEMIAMP", "DOUBLE_SEMIAMP", 
+			"PIPE", "PIPEAMP", "L_BR", "R_BR", "L_SQUAREBR", "R_SQUAREBR", "L_CURLYBR", 
+			"R_CURLYBR", "LT", "GT", "Exclamation", "DOUBLE_QUOTE", "SINGLE_QUOTE", 
+			"BACKSLASH", "PR_if", "PR_then", "PR_elif", "PR_else", "PR_fi", "PR_time", 
+			"PR_for", "PR_in", "PR_until", "PR_while", "PR_do", "PR_done", "PR_case", 
+			"PR_esac", "PR_coproc", "PR_select", "PR_function", "PR_Lsquarebracket", 
+			"PR_Rsquarebracket", "ID", "FILENAME", "SQ_WORD", "DQ_WORD", "COMMENT", 
+			"COMMENT_MUL", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -139,21 +145,21 @@ public class b2bParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(23);
+			setState(35);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << PR_if) | (1L << PR_for) | (1L << PR_until) | (1L << PR_while))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__5) | (1L << PR_if) | (1L << PR_for) | (1L << PR_until) | (1L << PR_while) | (1L << COMMENT) | (1L << COMMENT_MUL))) != 0)) {
 				{
 				{
-				setState(20);
+				setState(32);
 				command();
 				}
 				}
-				setState(25);
+				setState(37);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(26);
+			setState(38);
 			match(EOF);
 			}
 		}
@@ -169,11 +175,17 @@ public class b2bParser extends Parser {
 	}
 
 	public static class CommandContext extends ParserRuleContext {
-		public DashContext dash() {
-			return getRuleContext(DashContext.class,0);
+		public Gramar_excecutionContext gramar_excecution() {
+			return getRuleContext(Gramar_excecutionContext.class,0);
 		}
 		public Execution_controlContext execution_control() {
 			return getRuleContext(Execution_controlContext.class,0);
+		}
+		public CommentsContext comments() {
+			return getRuleContext(CommentsContext.class,0);
+		}
+		public Comment_linesContext comment_lines() {
+			return getRuleContext(Comment_linesContext.class,0);
 		}
 		public CommandContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -193,14 +205,15 @@ public class b2bParser extends Parser {
 		CommandContext _localctx = new CommandContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_command);
 		try {
-			setState(30);
+			setState(44);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
+			case T__5:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(28);
-				dash();
+				setState(40);
+				gramar_excecution();
 				}
 				break;
 			case PR_if:
@@ -209,8 +222,153 @@ public class b2bParser extends Parser {
 			case PR_while:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(29);
+				setState(41);
 				execution_control();
+				}
+				break;
+			case COMMENT:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(42);
+				comments();
+				}
+				break;
+			case COMMENT_MUL:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(43);
+				comment_lines();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CommentsContext extends ParserRuleContext {
+		public TerminalNode COMMENT() { return getToken(b2bParser.COMMENT, 0); }
+		public CommentsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_comments; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterComments(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitComments(this);
+		}
+	}
+
+	public final CommentsContext comments() throws RecognitionException {
+		CommentsContext _localctx = new CommentsContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_comments);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(46);
+			match(COMMENT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Comment_linesContext extends ParserRuleContext {
+		public TerminalNode COMMENT_MUL() { return getToken(b2bParser.COMMENT_MUL, 0); }
+		public Comment_linesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_comment_lines; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterComment_lines(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitComment_lines(this);
+		}
+	}
+
+	public final Comment_linesContext comment_lines() throws RecognitionException {
+		Comment_linesContext _localctx = new Comment_linesContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_comment_lines);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(48);
+			match(COMMENT_MUL);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Gramar_excecutionContext extends ParserRuleContext {
+		public DashContext dash() {
+			return getRuleContext(DashContext.class,0);
+		}
+		public EchoContext echo() {
+			return getRuleContext(EchoContext.class,0);
+		}
+		public Gramar_excecutionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_gramar_excecution; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterGramar_excecution(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitGramar_excecution(this);
+		}
+	}
+
+	public final Gramar_excecutionContext gramar_excecution() throws RecognitionException {
+		Gramar_excecutionContext _localctx = new Gramar_excecutionContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_gramar_excecution);
+		try {
+			setState(52);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__0:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(50);
+				dash();
+				}
+				break;
+			case T__5:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(51);
+				echo();
 				}
 				break;
 			default:
@@ -229,6 +387,12 @@ public class b2bParser extends Parser {
 	}
 
 	public static class DashContext extends ParserRuleContext {
+		public List<DashargsContext> dashargs() {
+			return getRuleContexts(DashargsContext.class);
+		}
+		public DashargsContext dashargs(int i) {
+			return getRuleContext(DashargsContext.class,i);
+		}
 		public TerminalNode FILENAME() { return getToken(b2bParser.FILENAME, 0); }
 		public List<TerminalNode> SINGLE_QUOTE() { return getTokens(b2bParser.SINGLE_QUOTE); }
 		public TerminalNode SINGLE_QUOTE(int i) {
@@ -236,12 +400,6 @@ public class b2bParser extends Parser {
 		}
 		public CommandContext command() {
 			return getRuleContext(CommandContext.class,0);
-		}
-		public List<DashargsContext> dashargs() {
-			return getRuleContexts(DashargsContext.class);
-		}
-		public DashargsContext dashargs(int i) {
-			return getRuleContext(DashargsContext.class,i);
 		}
 		public DashContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -259,44 +417,235 @@ public class b2bParser extends Parser {
 
 	public final DashContext dash() throws RecognitionException {
 		DashContext _localctx = new DashContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_dash);
+		enterRule(_localctx, 10, RULE_dash);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(32);
+			setState(54);
 			match(T__0);
-			setState(36);
+			setState(58);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__1) {
 				{
 				{
-				setState(33);
+				setState(55);
 				dashargs();
 				}
 				}
-				setState(38);
+				setState(60);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(44);
+			setState(66);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case FILENAME:
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			case 1:
 				{
-				setState(39);
+				setState(61);
 				match(FILENAME);
 				}
 				break;
-			case SINGLE_QUOTE:
+			case 2:
 				{
-				setState(40);
+				setState(62);
 				match(SINGLE_QUOTE);
-				setState(41);
+				setState(63);
 				command();
-				setState(42);
+				setState(64);
 				match(SINGLE_QUOTE);
+				}
+				break;
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DashargsContext extends ParserRuleContext {
+		public Token arg;
+		public DashargsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_dashargs; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterDashargs(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitDashargs(this);
+		}
+	}
+
+	public final DashargsContext dashargs() throws RecognitionException {
+		DashargsContext _localctx = new DashargsContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_dashargs);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(68);
+			match(T__1);
+			setState(69);
+			((DashargsContext)_localctx).arg = _input.LT(1);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4))) != 0)) ) {
+				((DashargsContext)_localctx).arg = (Token)_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class EchoContext extends ParserRuleContext {
+		public List<Long_optionContext> long_option() {
+			return getRuleContexts(Long_optionContext.class);
+		}
+		public Long_optionContext long_option(int i) {
+			return getRuleContext(Long_optionContext.class,i);
+		}
+		public List<Short_optionContext> short_option() {
+			return getRuleContexts(Short_optionContext.class);
+		}
+		public Short_optionContext short_option(int i) {
+			return getRuleContext(Short_optionContext.class,i);
+		}
+		public List<StringContext> string() {
+			return getRuleContexts(StringContext.class);
+		}
+		public StringContext string(int i) {
+			return getRuleContext(StringContext.class,i);
+		}
+		public List<TerminalNode> ID() { return getTokens(b2bParser.ID); }
+		public TerminalNode ID(int i) {
+			return getToken(b2bParser.ID, i);
+		}
+		public EchoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_echo; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterEcho(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitEcho(this);
+		}
+	}
+
+	public final EchoContext echo() throws RecognitionException {
+		EchoContext _localctx = new EchoContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_echo);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(71);
+			match(T__5);
+			setState(89);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case EOF:
+			case T__0:
+			case T__1:
+			case T__5:
+			case SEMIC:
+			case R_SQUAREBR:
+			case SINGLE_QUOTE:
+			case PR_if:
+			case PR_for:
+			case PR_until:
+			case PR_while:
+			case ID:
+			case SQ_WORD:
+			case DQ_WORD:
+			case COMMENT:
+			case COMMENT_MUL:
+				{
+				setState(75);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==T__1) {
+					{
+					{
+					setState(72);
+					short_option();
+					}
+					}
+					setState(77);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				setState(85);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << SQ_WORD) | (1L << DQ_WORD))) != 0)) {
+					{
+					setState(83);
+					_errHandler.sync(this);
+					switch (_input.LA(1)) {
+					case SQ_WORD:
+					case DQ_WORD:
+						{
+						setState(78);
+						string();
+						}
+						break;
+					case ID:
+						{
+						setState(79);
+						match(ID);
+						setState(81);
+						_errHandler.sync(this);
+						_la = _input.LA(1);
+						if (_la==T__9 || _la==GT) {
+							{
+							setState(80);
+							long_option();
+							}
+						}
+
+						}
+						break;
+					default:
+						throw new NoViableAltException(this);
+					}
+					}
+					setState(87);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				}
+				break;
+			case T__9:
+			case GT:
+				{
+				setState(88);
+				long_option();
 				}
 				break;
 			default:
@@ -315,34 +664,42 @@ public class b2bParser extends Parser {
 		return _localctx;
 	}
 
-	public static class DashargsContext extends ParserRuleContext {
-		public DashparamsContext dashparams() {
-			return getRuleContext(DashparamsContext.class,0);
-		}
-		public DashargsContext(ParserRuleContext parent, int invokingState) {
+	public static class Short_optionContext extends ParserRuleContext {
+		public Token opt;
+		public Short_optionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_dashargs; }
+		@Override public int getRuleIndex() { return RULE_short_option; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterDashargs(this);
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterShort_option(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitDashargs(this);
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitShort_option(this);
 		}
 	}
 
-	public final DashargsContext dashargs() throws RecognitionException {
-		DashargsContext _localctx = new DashargsContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_dashargs);
+	public final Short_optionContext short_option() throws RecognitionException {
+		Short_optionContext _localctx = new Short_optionContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_short_option);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(46);
+			setState(91);
 			match(T__1);
-			setState(47);
-			dashparams();
+			setState(92);
+			((Short_optionContext)_localctx).opt = _input.LT(1);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8))) != 0)) ) {
+				((Short_optionContext)_localctx).opt = (Token)_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -356,31 +713,33 @@ public class b2bParser extends Parser {
 		return _localctx;
 	}
 
-	public static class DashparamsContext extends ParserRuleContext {
-		public DashparamsContext(ParserRuleContext parent, int invokingState) {
+	public static class StringContext extends ParserRuleContext {
+		public TerminalNode SQ_WORD() { return getToken(b2bParser.SQ_WORD, 0); }
+		public TerminalNode DQ_WORD() { return getToken(b2bParser.DQ_WORD, 0); }
+		public StringContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_dashparams; }
+		@Override public int getRuleIndex() { return RULE_string; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterDashparams(this);
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterString(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitDashparams(this);
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitString(this);
 		}
 	}
 
-	public final DashparamsContext dashparams() throws RecognitionException {
-		DashparamsContext _localctx = new DashparamsContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_dashparams);
+	public final StringContext string() throws RecognitionException {
+		StringContext _localctx = new StringContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_string);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(94);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4))) != 0)) ) {
+			if ( !(_la==SQ_WORD || _la==DQ_WORD) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -388,6 +747,83 @@ public class b2bParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Long_optionContext extends ParserRuleContext {
+		public Token opt;
+		public TerminalNode GT() { return getToken(b2bParser.GT, 0); }
+		public TerminalNode ID() { return getToken(b2bParser.ID, 0); }
+		public TerminalNode FILENAME() { return getToken(b2bParser.FILENAME, 0); }
+		public Long_optionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_long_option; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).enterLong_option(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof b2bListener ) ((b2bListener)listener).exitLong_option(this);
+		}
+	}
+
+	public final Long_optionContext long_option() throws RecognitionException {
+		Long_optionContext _localctx = new Long_optionContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_long_option);
+		int _la;
+		try {
+			setState(100);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__9:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(96);
+				match(T__9);
+				setState(97);
+				((Long_optionContext)_localctx).opt = _input.LT(1);
+				_la = _input.LA(1);
+				if ( !(_la==T__10 || _la==T__11) ) {
+					((Long_optionContext)_localctx).opt = (Token)_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				}
+				break;
+			case GT:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(98);
+				match(GT);
+				setState(99);
+				_la = _input.LA(1);
+				if ( !(_la==ID || _la==FILENAME) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -430,36 +866,36 @@ public class b2bParser extends Parser {
 
 	public final Execution_controlContext execution_control() throws RecognitionException {
 		Execution_controlContext _localctx = new Execution_controlContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_execution_control);
+		enterRule(_localctx, 22, RULE_execution_control);
 		try {
-			setState(55);
+			setState(106);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PR_if:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(51);
+				setState(102);
 				b_if();
 				}
 				break;
 			case PR_while:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(52);
+				setState(103);
 				b_while();
 				}
 				break;
 			case PR_for:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(53);
+				setState(104);
 				b_for();
 				}
 				break;
 			case PR_until:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(54);
+				setState(105);
 				b_until();
 				}
 				break;
@@ -516,54 +952,54 @@ public class b2bParser extends Parser {
 
 	public final B_ifContext b_if() throws RecognitionException {
 		B_ifContext _localctx = new B_ifContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_b_if);
+		enterRule(_localctx, 24, RULE_b_if);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(108);
 			match(PR_if);
-			setState(58);
+			setState(109);
 			command();
-			setState(59);
+			setState(110);
 			match(SEMIC);
-			setState(60);
+			setState(111);
 			match(PR_then);
-			setState(61);
+			setState(112);
 			command();
-			setState(62);
+			setState(113);
 			match(SEMIC);
-			setState(72);
+			setState(123);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==PR_elif) {
 				{
 				{
-				setState(63);
+				setState(114);
 				match(PR_elif);
-				setState(64);
+				setState(115);
 				command();
-				setState(65);
+				setState(116);
 				match(SEMIC);
-				setState(66);
+				setState(117);
 				match(PR_then);
-				setState(67);
+				setState(118);
 				command();
-				setState(68);
+				setState(119);
 				match(SEMIC);
 				}
 				}
-				setState(74);
+				setState(125);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(75);
+			setState(126);
 			match(PR_else);
-			setState(76);
+			setState(127);
 			command();
-			setState(77);
+			setState(128);
 			match(SEMIC);
-			setState(78);
+			setState(129);
 			match(PR_fi);
 			}
 		}
@@ -608,23 +1044,23 @@ public class b2bParser extends Parser {
 
 	public final B_whileContext b_while() throws RecognitionException {
 		B_whileContext _localctx = new B_whileContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_b_while);
+		enterRule(_localctx, 26, RULE_b_while);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(80);
+			setState(131);
 			match(PR_while);
-			setState(81);
+			setState(132);
 			command();
-			setState(82);
+			setState(133);
 			match(SEMIC);
-			setState(83);
+			setState(134);
 			match(PR_do);
-			setState(84);
+			setState(135);
 			command();
-			setState(85);
+			setState(136);
 			match(SEMIC);
-			setState(86);
+			setState(137);
 			match(PR_done);
 			}
 		}
@@ -668,46 +1104,46 @@ public class b2bParser extends Parser {
 
 	public final B_forContext b_for() throws RecognitionException {
 		B_forContext _localctx = new B_forContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_b_for);
+		enterRule(_localctx, 28, RULE_b_for);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(88);
+			setState(139);
 			match(PR_for);
-			setState(89);
+			setState(140);
 			match(ID);
-			setState(97);
+			setState(148);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==PR_in) {
 				{
-				setState(90);
+				setState(141);
 				match(PR_in);
-				setState(94);
+				setState(145);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==ID) {
 					{
 					{
-					setState(91);
+					setState(142);
 					match(ID);
 					}
 					}
-					setState(96);
+					setState(147);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 			}
 
-			setState(99);
+			setState(150);
 			match(PR_do);
-			setState(100);
+			setState(151);
 			command();
-			setState(101);
+			setState(152);
 			match(SEMIC);
-			setState(102);
+			setState(153);
 			match(PR_done);
 			}
 		}
@@ -754,27 +1190,27 @@ public class b2bParser extends Parser {
 
 	public final B_untilContext b_until() throws RecognitionException {
 		B_untilContext _localctx = new B_untilContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_b_until);
+		enterRule(_localctx, 30, RULE_b_until);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(104);
+			setState(155);
 			match(PR_until);
-			setState(105);
+			setState(156);
 			match(L_SQUAREBR);
-			setState(106);
+			setState(157);
 			command();
-			setState(107);
+			setState(158);
 			match(R_SQUAREBR);
-			setState(108);
+			setState(159);
 			match(SEMIC);
-			setState(109);
+			setState(160);
 			match(PR_do);
-			setState(110);
+			setState(161);
 			command();
-			setState(111);
+			setState(162);
 			match(SEMIC);
-			setState(112);
+			setState(163);
 			match(PR_done);
 			}
 		}
@@ -790,34 +1226,52 @@ public class b2bParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\63u\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\3"+
-		"\2\7\2\30\n\2\f\2\16\2\33\13\2\3\2\3\2\3\3\3\3\5\3!\n\3\3\4\3\4\7\4%\n"+
-		"\4\f\4\16\4(\13\4\3\4\3\4\3\4\3\4\3\4\5\4/\n\4\3\5\3\5\3\5\3\6\3\6\3\7"+
-		"\3\7\3\7\3\7\5\7:\n\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b"+
-		"\3\b\7\bI\n\b\f\b\16\bL\13\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3"+
-		"\t\3\t\3\t\3\n\3\n\3\n\3\n\7\n_\n\n\f\n\16\nb\13\n\5\nd\n\n\3\n\3\n\3"+
-		"\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\2\2"+
-		"\f\2\4\6\b\n\f\16\20\22\24\2\3\3\2\5\7\2t\2\31\3\2\2\2\4 \3\2\2\2\6\""+
-		"\3\2\2\2\b\60\3\2\2\2\n\63\3\2\2\2\f9\3\2\2\2\16;\3\2\2\2\20R\3\2\2\2"+
-		"\22Z\3\2\2\2\24j\3\2\2\2\26\30\5\4\3\2\27\26\3\2\2\2\30\33\3\2\2\2\31"+
-		"\27\3\2\2\2\31\32\3\2\2\2\32\34\3\2\2\2\33\31\3\2\2\2\34\35\7\2\2\3\35"+
-		"\3\3\2\2\2\36!\5\6\4\2\37!\5\f\7\2 \36\3\2\2\2 \37\3\2\2\2!\5\3\2\2\2"+
-		"\"&\7\3\2\2#%\5\b\5\2$#\3\2\2\2%(\3\2\2\2&$\3\2\2\2&\'\3\2\2\2\'.\3\2"+
-		"\2\2(&\3\2\2\2)/\7\61\2\2*+\7\33\2\2+,\5\4\3\2,-\7\33\2\2-/\3\2\2\2.)"+
-		"\3\2\2\2.*\3\2\2\2/\7\3\2\2\2\60\61\7\4\2\2\61\62\5\n\6\2\62\t\3\2\2\2"+
-		"\63\64\t\2\2\2\64\13\3\2\2\2\65:\5\16\b\2\66:\5\20\t\2\67:\5\22\n\28:"+
-		"\5\24\13\29\65\3\2\2\29\66\3\2\2\29\67\3\2\2\298\3\2\2\2:\r\3\2\2\2;<"+
-		"\7\35\2\2<=\5\4\3\2=>\7\13\2\2>?\7\36\2\2?@\5\4\3\2@J\7\13\2\2AB\7\37"+
-		"\2\2BC\5\4\3\2CD\7\13\2\2DE\7\36\2\2EF\5\4\3\2FG\7\13\2\2GI\3\2\2\2HA"+
-		"\3\2\2\2IL\3\2\2\2JH\3\2\2\2JK\3\2\2\2KM\3\2\2\2LJ\3\2\2\2MN\7 \2\2NO"+
-		"\5\4\3\2OP\7\13\2\2PQ\7!\2\2Q\17\3\2\2\2RS\7&\2\2ST\5\4\3\2TU\7\13\2\2"+
-		"UV\7\'\2\2VW\5\4\3\2WX\7\13\2\2XY\7(\2\2Y\21\3\2\2\2Z[\7#\2\2[c\7\60\2"+
-		"\2\\`\7$\2\2]_\7\60\2\2^]\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ad\3\2"+
-		"\2\2b`\3\2\2\2c\\\3\2\2\2cd\3\2\2\2de\3\2\2\2ef\7\'\2\2fg\5\4\3\2gh\7"+
-		"\13\2\2hi\7(\2\2i\23\3\2\2\2jk\7%\2\2kl\7\23\2\2lm\5\4\3\2mn\7\24\2\2"+
-		"no\7\13\2\2op\7\'\2\2pq\5\4\3\2qr\7\13\2\2rs\7(\2\2s\25\3\2\2\2\n\31 "+
-		"&.9J`c";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3=\u00a8\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\7\2$\n"+
+		"\2\f\2\16\2\'\13\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3/\n\3\3\4\3\4\3\5\3\5\3"+
+		"\6\3\6\5\6\67\n\6\3\7\3\7\7\7;\n\7\f\7\16\7>\13\7\3\7\3\7\3\7\3\7\3\7"+
+		"\5\7E\n\7\3\b\3\b\3\b\3\t\3\t\7\tL\n\t\f\t\16\tO\13\t\3\t\3\t\3\t\5\t"+
+		"T\n\t\7\tV\n\t\f\t\16\tY\13\t\3\t\5\t\\\n\t\3\n\3\n\3\n\3\13\3\13\3\f"+
+		"\3\f\3\f\3\f\5\fg\n\f\3\r\3\r\3\r\3\r\5\rm\n\r\3\16\3\16\3\16\3\16\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\7\16|\n\16\f\16\16\16\177\13"+
+		"\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3"+
+		"\20\3\20\3\20\3\20\7\20\u0092\n\20\f\20\16\20\u0095\13\20\5\20\u0097\n"+
+		"\20\3\20\3\20\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3"+
+		"\21\3\21\3\21\2\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\7\3\2\5"+
+		"\7\3\2\t\13\3\29:\3\2\r\16\3\2\678\2\u00ab\2%\3\2\2\2\4.\3\2\2\2\6\60"+
+		"\3\2\2\2\b\62\3\2\2\2\n\66\3\2\2\2\f8\3\2\2\2\16F\3\2\2\2\20I\3\2\2\2"+
+		"\22]\3\2\2\2\24`\3\2\2\2\26f\3\2\2\2\30l\3\2\2\2\32n\3\2\2\2\34\u0085"+
+		"\3\2\2\2\36\u008d\3\2\2\2 \u009d\3\2\2\2\"$\5\4\3\2#\"\3\2\2\2$\'\3\2"+
+		"\2\2%#\3\2\2\2%&\3\2\2\2&(\3\2\2\2\'%\3\2\2\2()\7\2\2\3)\3\3\2\2\2*/\5"+
+		"\n\6\2+/\5\30\r\2,/\5\6\4\2-/\5\b\5\2.*\3\2\2\2.+\3\2\2\2.,\3\2\2\2.-"+
+		"\3\2\2\2/\5\3\2\2\2\60\61\7;\2\2\61\7\3\2\2\2\62\63\7<\2\2\63\t\3\2\2"+
+		"\2\64\67\5\f\7\2\65\67\5\20\t\2\66\64\3\2\2\2\66\65\3\2\2\2\67\13\3\2"+
+		"\2\28<\7\3\2\29;\5\16\b\2:9\3\2\2\2;>\3\2\2\2<:\3\2\2\2<=\3\2\2\2=D\3"+
+		"\2\2\2><\3\2\2\2?E\78\2\2@A\7\"\2\2AB\5\4\3\2BC\7\"\2\2CE\3\2\2\2D?\3"+
+		"\2\2\2D@\3\2\2\2DE\3\2\2\2E\r\3\2\2\2FG\7\4\2\2GH\t\2\2\2H\17\3\2\2\2"+
+		"I[\7\b\2\2JL\5\22\n\2KJ\3\2\2\2LO\3\2\2\2MK\3\2\2\2MN\3\2\2\2NW\3\2\2"+
+		"\2OM\3\2\2\2PV\5\24\13\2QS\7\67\2\2RT\5\26\f\2SR\3\2\2\2ST\3\2\2\2TV\3"+
+		"\2\2\2UP\3\2\2\2UQ\3\2\2\2VY\3\2\2\2WU\3\2\2\2WX\3\2\2\2X\\\3\2\2\2YW"+
+		"\3\2\2\2Z\\\5\26\f\2[M\3\2\2\2[Z\3\2\2\2\\\21\3\2\2\2]^\7\4\2\2^_\t\3"+
+		"\2\2_\23\3\2\2\2`a\t\4\2\2a\25\3\2\2\2bc\7\f\2\2cg\t\5\2\2de\7\37\2\2"+
+		"eg\t\6\2\2fb\3\2\2\2fd\3\2\2\2g\27\3\2\2\2hm\5\32\16\2im\5\34\17\2jm\5"+
+		"\36\20\2km\5 \21\2lh\3\2\2\2li\3\2\2\2lj\3\2\2\2lk\3\2\2\2m\31\3\2\2\2"+
+		"no\7$\2\2op\5\4\3\2pq\7\22\2\2qr\7%\2\2rs\5\4\3\2s}\7\22\2\2tu\7&\2\2"+
+		"uv\5\4\3\2vw\7\22\2\2wx\7%\2\2xy\5\4\3\2yz\7\22\2\2z|\3\2\2\2{t\3\2\2"+
+		"\2|\177\3\2\2\2}{\3\2\2\2}~\3\2\2\2~\u0080\3\2\2\2\177}\3\2\2\2\u0080"+
+		"\u0081\7\'\2\2\u0081\u0082\5\4\3\2\u0082\u0083\7\22\2\2\u0083\u0084\7"+
+		"(\2\2\u0084\33\3\2\2\2\u0085\u0086\7-\2\2\u0086\u0087\5\4\3\2\u0087\u0088"+
+		"\7\22\2\2\u0088\u0089\7.\2\2\u0089\u008a\5\4\3\2\u008a\u008b\7\22\2\2"+
+		"\u008b\u008c\7/\2\2\u008c\35\3\2\2\2\u008d\u008e\7*\2\2\u008e\u0096\7"+
+		"\67\2\2\u008f\u0093\7+\2\2\u0090\u0092\7\67\2\2\u0091\u0090\3\2\2\2\u0092"+
+		"\u0095\3\2\2\2\u0093\u0091\3\2\2\2\u0093\u0094\3\2\2\2\u0094\u0097\3\2"+
+		"\2\2\u0095\u0093\3\2\2\2\u0096\u008f\3\2\2\2\u0096\u0097\3\2\2\2\u0097"+
+		"\u0098\3\2\2\2\u0098\u0099\7.\2\2\u0099\u009a\5\4\3\2\u009a\u009b\7\22"+
+		"\2\2\u009b\u009c\7/\2\2\u009c\37\3\2\2\2\u009d\u009e\7,\2\2\u009e\u009f"+
+		"\7\32\2\2\u009f\u00a0\5\4\3\2\u00a0\u00a1\7\33\2\2\u00a1\u00a2\7\22\2"+
+		"\2\u00a2\u00a3\7.\2\2\u00a3\u00a4\5\4\3\2\u00a4\u00a5\7\22\2\2\u00a5\u00a6"+
+		"\7/\2\2\u00a6!\3\2\2\2\21%.\66<DMSUW[fl}\u0093\u0096";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

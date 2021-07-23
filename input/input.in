@@ -1,1 +1,10 @@
-dash -c 'echo hi'
+#!/bin/sh
+#comentario de una linea
+<<EOF
+    comentario
+        de
+            multiples
+                lineas
+                    :vomiting_face:
+                    EOF
+dash -a my_script.sh

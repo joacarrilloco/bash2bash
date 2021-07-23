@@ -9,14 +9,42 @@ grammar b2b;
 
 root: command* EOF;
 
-//VARIABLES AND EXPRESSIONS
-command : dash
+command : gramar_excecution
         | execution_control
+        | variables_expressions
+        | comments
+        | comment_lines
         ;
+comments: COMMENT;
+comment_lines: COMMENT_MUL;
 
-dash: 'dash' dashargs* (FILENAME | '\'' command '\'');
-dashargs: '-' dashparams;
-dashparams: 'c' | 'a' | 's';
+//GRAMMAR AND EXCECUTION
+gramar_excecution: dash
+                 | echo
+                 ;
+//dash
+dash: 'dash' dashargs* (FILENAME | '\'' command '\'')?;
+dashargs: '-' arg=('c' | 'a' | 's');
+
+//echo
+echo: 'echo' (short_option* (string | ID long_option?)* | long_option);
+short_option: '-' opt=('n' | 'e' | 'E');
+string: SQ_WORD
+      | DQ_WORD
+      ;
+long_option: '--' opt=('help' | 'version')
+           | GT (ID | FILENAME)
+           ;
+
+//VARIABLES AND EXPRESSIONS
+variables_expressions: var;
+
+//instanciacion de variables ¿por que 'a' no encaja en ID? wat tf
+var: ID EQ value;
+value: NUMERO
+     | SQ_WORD
+     | DQ_WORD
+     ;
 
 //ARITHMETIC AND LOGIC
 //STRINGS
@@ -80,6 +108,9 @@ L_CURLYBR: '{';
 R_CURLYBR: '}';
 LT: '<';
 GT: '>';
+EQ: '=';
+GOET: '>=';
+LOET: '<=';
 Exclamation: '!';
 
 //quotes
@@ -120,7 +151,12 @@ PR_Rsquarebracket: ']]';
 // por ejemplo, poner la regla para una palabra reservada antes de la regla para un identificador
 //EXT: [.][a-zA-Z0-9]+;
 //WORDS
+
+NUMERO: [0-9]+([.][0-9]+)?;
 ID: [a-zA-Z][a-zA-Z0-9_]*;
 FILENAME: [a-zA-Z][a-zA-Z0-9_]*[.][a-zA-Z0-9]+;
-COMMENT: '#' ~[\r\n]* -> skip;
-WS		: [ \t\r]+ -> skip ;
+SQ_WORD: '\'' ( '\\"' | . )*? '\'' ;
+DQ_WORD: '"' ( '\\"' | . )*? '"' ;
+COMMENT: '#' ~[\r]*;
+COMMENT_MUL: '<<EOF' (.)*? 'EOF';
+WS		: [ \t\r\n]+ -> skip ;

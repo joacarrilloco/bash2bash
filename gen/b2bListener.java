@@ -27,6 +27,36 @@ public interface b2bListener extends ParseTreeListener {
 	 */
 	void exitCommand(b2bParser.CommandContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link b2bParser#comments}.
+	 * @param ctx the parse tree
+	 */
+	void enterComments(b2bParser.CommentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#comments}.
+	 * @param ctx the parse tree
+	 */
+	void exitComments(b2bParser.CommentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#comment_lines}.
+	 * @param ctx the parse tree
+	 */
+	void enterComment_lines(b2bParser.Comment_linesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#comment_lines}.
+	 * @param ctx the parse tree
+	 */
+	void exitComment_lines(b2bParser.Comment_linesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#gramar_excecution}.
+	 * @param ctx the parse tree
+	 */
+	void enterGramar_excecution(b2bParser.Gramar_excecutionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#gramar_excecution}.
+	 * @param ctx the parse tree
+	 */
+	void exitGramar_excecution(b2bParser.Gramar_excecutionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link b2bParser#dash}.
 	 * @param ctx the parse tree
 	 */
@@ -47,15 +77,45 @@ public interface b2bListener extends ParseTreeListener {
 	 */
 	void exitDashargs(b2bParser.DashargsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link b2bParser#dashparams}.
+	 * Enter a parse tree produced by {@link b2bParser#echo}.
 	 * @param ctx the parse tree
 	 */
-	void enterDashparams(b2bParser.DashparamsContext ctx);
+	void enterEcho(b2bParser.EchoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link b2bParser#dashparams}.
+	 * Exit a parse tree produced by {@link b2bParser#echo}.
 	 * @param ctx the parse tree
 	 */
-	void exitDashparams(b2bParser.DashparamsContext ctx);
+	void exitEcho(b2bParser.EchoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#short_option}.
+	 * @param ctx the parse tree
+	 */
+	void enterShort_option(b2bParser.Short_optionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#short_option}.
+	 * @param ctx the parse tree
+	 */
+	void exitShort_option(b2bParser.Short_optionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(b2bParser.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(b2bParser.StringContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#long_option}.
+	 * @param ctx the parse tree
+	 */
+	void enterLong_option(b2bParser.Long_optionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#long_option}.
+	 * @param ctx the parse tree
+	 */
+	void exitLong_option(b2bParser.Long_optionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link b2bParser#execution_control}.
 	 * @param ctx the parse tree
