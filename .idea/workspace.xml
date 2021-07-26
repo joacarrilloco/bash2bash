@@ -14,7 +14,6 @@
       <change beforePath="$PROJECT_DIR$/grammar/b2b.g4" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/b2b.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input/input.in" beforeDir="false" afterPath="$PROJECT_DIR$/input/input.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Translator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ANTLR/antlr-4.9.2-complete.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

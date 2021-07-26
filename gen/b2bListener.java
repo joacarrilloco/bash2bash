@@ -27,26 +27,6 @@ public interface b2bListener extends ParseTreeListener {
 	 */
 	void exitCommand(b2bParser.CommandContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link b2bParser#comments}.
-	 * @param ctx the parse tree
-	 */
-	void enterComments(b2bParser.CommentsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link b2bParser#comments}.
-	 * @param ctx the parse tree
-	 */
-	void exitComments(b2bParser.CommentsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link b2bParser#comment_lines}.
-	 * @param ctx the parse tree
-	 */
-	void enterComment_lines(b2bParser.Comment_linesContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link b2bParser#comment_lines}.
-	 * @param ctx the parse tree
-	 */
-	void exitComment_lines(b2bParser.Comment_linesContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link b2bParser#gramar_excecution}.
 	 * @param ctx the parse tree
 	 */
@@ -87,35 +67,105 @@ public interface b2bListener extends ParseTreeListener {
 	 */
 	void exitEcho(b2bParser.EchoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link b2bParser#short_option}.
+	 * Enter a parse tree produced by {@link b2bParser#comments}.
 	 * @param ctx the parse tree
 	 */
-	void enterShort_option(b2bParser.Short_optionContext ctx);
+	void enterComments(b2bParser.CommentsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link b2bParser#short_option}.
+	 * Exit a parse tree produced by {@link b2bParser#comments}.
 	 * @param ctx the parse tree
 	 */
-	void exitShort_option(b2bParser.Short_optionContext ctx);
+	void exitComments(b2bParser.CommentsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link b2bParser#string}.
+	 * Enter a parse tree produced by {@link b2bParser#comment_lines}.
 	 * @param ctx the parse tree
 	 */
-	void enterString(b2bParser.StringContext ctx);
+	void enterComment_lines(b2bParser.Comment_linesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link b2bParser#string}.
+	 * Exit a parse tree produced by {@link b2bParser#comment_lines}.
 	 * @param ctx the parse tree
 	 */
-	void exitString(b2bParser.StringContext ctx);
+	void exitComment_lines(b2bParser.Comment_linesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link b2bParser#long_option}.
+	 * Enter a parse tree produced by {@link b2bParser#read}.
 	 * @param ctx the parse tree
 	 */
-	void enterLong_option(b2bParser.Long_optionContext ctx);
+	void enterRead(b2bParser.ReadContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link b2bParser#long_option}.
+	 * Exit a parse tree produced by {@link b2bParser#read}.
 	 * @param ctx the parse tree
 	 */
-	void exitLong_option(b2bParser.Long_optionContext ctx);
+	void exitRead(b2bParser.ReadContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#variables_expressions}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariables_expressions(b2bParser.Variables_expressionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#variables_expressions}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariables_expressions(b2bParser.Variables_expressionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#var}.
+	 * @param ctx the parse tree
+	 */
+	void enterVar(b2bParser.VarContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#var}.
+	 * @param ctx the parse tree
+	 */
+	void exitVar(b2bParser.VarContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void enterValue(b2bParser.ValueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void exitValue(b2bParser.ValueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#nill}.
+	 * @param ctx the parse tree
+	 */
+	void enterNill(b2bParser.NillContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#nill}.
+	 * @param ctx the parse tree
+	 */
+	void exitNill(b2bParser.NillContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#arithmetic_logic}.
+	 * @param ctx the parse tree
+	 */
+	void enterArithmetic_logic(b2bParser.Arithmetic_logicContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#arithmetic_logic}.
+	 * @param ctx the parse tree
+	 */
+	void exitArithmetic_logic(b2bParser.Arithmetic_logicContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#boolean_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterBoolean_val(b2bParser.Boolean_valContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#boolean_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitBoolean_val(b2bParser.Boolean_valContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link b2bParser#logical_operators}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogical_operators(b2bParser.Logical_operatorsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link b2bParser#logical_operators}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogical_operators(b2bParser.Logical_operatorsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link b2bParser#execution_control}.
 	 * @param ctx the parse tree

@@ -1,10 +1,9 @@
-#!/bin/sh
-#comentario de una linea
-<<EOF
-    comentario
-        de
-            multiples
-                lineas
-                    :vomiting_face:
-                    EOF
-dash -a my_script.sh
+if [ read xd ];
+then
+  echo "no hits"
+elif [ read hola ];
+then
+  echo "1 hit"
+else
+  echo $n " hits"
+fi
